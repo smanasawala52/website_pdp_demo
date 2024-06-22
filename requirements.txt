@@ -1,0 +1,21 @@
+openai
+langchain
+langchain_community
+streamlit
+python-dotenv
+langchain_openai
+streamlit_carousel
+pinecone-client
+tiktoken
+langchain_pinecone
+langchain-text-splitters
+Wikipedia-API
+wikipedia
+fuzzywuzzy
+twilio
+flask
+st-clickable-images
+python-Levenshtein
+
+
+-e .

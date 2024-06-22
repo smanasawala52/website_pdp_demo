@@ -1,0 +1,257 @@
+[
+  {
+    "title":"Free",
+    "sub_title": "To get started",
+    "sub_title_tool_tip": "Perfect for new businesses looking to make a mark.",
+    "price_monthly": "$0",
+    "price_yearly": "$0",
+    "price_sub_title" : "It’s free forever!",
+    "basic_attributes": ["1 user", "500 Mb storage space","Personalized sub-domain (accountname.wixsite.com/sitename)"],
+    "site_features": [
+      {"Custom domain": "-"},
+      {"Free domain for 1 year": "-"},
+      {"Remove Vista x Wix branding": "-"},
+      {"Warning-proof": "-"},
+      {"Storage space": "500 Mb"},
+      {"Video hours": "-"},
+      {"Customer accounts": "-"},
+      {"Customized reports": "-"},
+      {"Events calendar appFree for 1": "-"},
+      {"Site booster appFree for 1 Year": "-"}
+    ],
+    "payment_tools": [
+      {"Accept payments": "-"},
+      {"Plans and recurring payments": "-"},
+      {"Sell on marketplaces": "-"},
+      {"Sell on social channels": "-"},
+      {"Automated Sales Tax": "-"}
+    ],
+    "complete_ecommerce_platform": [
+      {"Up to 50,000 products": "-"},
+      {"Abandoned cart recovery": "-"},
+      {"Automatic discounts": "-"},
+      {"Accept pre-orders": "-"},
+      {"Accept manual orders": "-"},
+      {"Trusted Shops customer": "-"},
+      {"Advanced shipping": "-"},
+      {"Loyalty Program by Smile.io": "-"},
+      {"Dropshipping by Modalyst": "-"},
+      {"Branded eGift cards": "-"},
+      {"Back in stock notifications": "-"},
+      {"Multiple Currencies": "-"}
+    ],
+    "bookings_platform": [
+      {"Unlimited services and classes": "-"},
+      {"Multi-calendar syncs": "-"},
+      {"Staff seats": "-"},
+      {"Subscriptions": "-"},
+      {"SMS notifications": "-"},
+      {"Bookings on the go": "-"},
+      {"Bookings analytics": "-"}
+    ]
+  },
+  {
+    "title":"Light",
+    "sub_title": "Get the basics",
+    "sub_title_tool_tip": "All the essentials needed for a simple online presence.",
+    "price_monthly": "$17",
+    "price_yearly": "$204",
+    "price_sub_title" : "$204 billed yearly.",
+    "basic_attributes": ["2 collaborators", "2 GB storage space","Light marketing suite","Free domain for 1 year"],
+    "site_features": [
+      {"Custom domain": "Y"},
+      {"Free domain for 1 year": "Y"},
+      {"Remove Vista x Wix branding": "Y"},
+      {"Warning-proof": "Y"},
+      {"Storage space": "2GB"},
+      {"Video hours": "30 Minutes"},
+      {"Customer accounts": "-"},
+      {"Customized reports": "-"},
+      {"Events calendar appFree for 1": "-"},
+      {"Site booster appFree for 1 Year": "-"}
+    ],
+    "payment_tools": [
+      {"Accept payments": "-"},
+      {"Plans and recurring payments": "-"},
+      {"Sell on marketplaces": "-"},
+      {"Sell on social channels": "-"},
+      {"Automated Sales Tax": "-"}
+    ],
+    "complete_ecommerce_platform": [
+      {"Up to 50,000 products": "-"},
+      {"Abandoned cart recovery": "-"},
+      {"Automatic discounts": "-"},
+      {"Accept pre-orders": "-"},
+      {"Accept manual orders": "-"},
+      {"Trusted Shops customer": "-"},
+      {"Advanced shipping": "-"},
+      {"Loyalty Program by Smile.io": "-"},
+      {"Dropshipping by Modalyst": "-"},
+      {"Branded eGift cards": "-"},
+      {"Back in stock notifications": "-"},
+      {"Multiple Currencies": "-"}
+    ],
+    "bookings_platform": [
+      {"Unlimited services and classes": "-"},
+      {"Multi-calendar syncs": "-"},
+      {"Staff seats": "-"},
+      {"Subscriptions": "-"},
+      {"SMS notifications": "-"},
+      {"Bookings on the go": "-"},
+      {"Bookings analytics": "-"}
+    ]
+  },
+  {
+    "title":"Core",
+    "sub_title": "Engage your audience",
+    "sub_title_tool_tip": "Marketing and analytics tools to engage and grow your audience and the ability to accept payments.",
+    "price_monthly": "$29",
+    "price_yearly": "$348",
+    "price_sub_title" : "$348 billed yearly.",
+    "basic_attributes": ["5 collaborators", "50 GB storage space","Basic marketing suite","Free domain for 1 year","Basic site analytics","Accept payments","Basic ecommerce"],
+    "site_features": [
+      {"Custom domain": "Y"},
+      {"Free domain for 1 year": "Y"},
+      {"Remove Vista x Wix branding": "Y"},
+      {"Warning-proof": "Y"},
+      {"Storage space": "50GB"},
+      {"Video hours": "5 hours"},
+      {"Customer accounts": "Y"},
+      {"Customized reports": "-"},
+      {"Events calendar appFree for 1": "-"},
+      {"Site booster appFree for 1 Year": "-"}
+    ],
+    "payment_tools": [
+      {"Accept payments": "-"},
+      {"Plans and recurring payments": "-"},
+      {"Sell on marketplaces": "-"},
+      {"Sell on social channels": "-"},
+      {"Automated Sales Tax": "-"}
+    ],
+    "complete_ecommerce_platform": [
+      {"Up to 50,000 products": "-"},
+      {"Abandoned cart recovery": "-"},
+      {"Automatic discounts": "-"},
+      {"Accept pre-orders": "-"},
+      {"Accept manual orders": "-"},
+      {"Trusted Shops customer": "-"},
+      {"Advanced shipping": "-"},
+      {"Loyalty Program by Smile.io": "-"},
+      {"Dropshipping by Modalyst": "-"},
+      {"Branded eGift cards": "-"},
+      {"Back in stock notifications": "-"},
+      {"Multiple Currencies": "-"}
+    ],
+    "bookings_platform": [
+      {"Unlimited services and classes": "-"},
+      {"Multi-calendar syncs": "-"},
+      {"Staff seats": "-"},
+      {"Subscriptions": "-"},
+      {"SMS notifications": "-"},
+      {"Bookings on the go": "-"},
+      {"Bookings analytics": "-"}
+    ]
+  },
+  {
+    "title":"Business",
+    "sub_title": "Grow your brand",
+    "sub_title_tool_tip": "Everything you need for a credible online brand, complete with eCommerce payments, marketing tools, and site analytics.",
+    "price_monthly": "$36",
+    "price_yearly": "$432",
+    "price_sub_title" : "$432 billed yearly.",
+    "basic_attributes": ["10 collaborators", "100 GB storage space","Standard marketing suite","Free domain for 1 year","Standard site analytics","Accept payments","Standard ecommerce"],
+    "site_features": [
+      {"Custom domain": "Y"},
+      {"Free domain for 1 year": "Y"},
+      {"Remove Vista x Wix branding": "Y"},
+      {"Warning-proof": "Y"},
+      {"Storage space": "100 GB"},
+      {"Video hours": "10 hours"},
+      {"Customer accounts": "Y"},
+      {"Customized reports": "-"},
+      {"Events calendar appFree for 1": "-"},
+      {"Site booster appFree for 1 Year": "-"}
+    ],
+    "payment_tools": [
+      {"Accept payments": "-"},
+      {"Plans and recurring payments": "-"},
+      {"Sell on marketplaces": "-"},
+      {"Sell on social channels": "-"},
+      {"Automated Sales Tax": "100 Transactions /month"}
+    ],
+    "complete_ecommerce_platform": [
+      {"Up to 50,000 products": "-"},
+      {"Abandoned cart recovery": "-"},
+      {"Automatic discounts": "-"},
+      {"Accept pre-orders": "-"},
+      {"Accept manual orders": "-"},
+      {"Trusted Shops customer": "-"},
+      {"Advanced shipping": "-"},
+      {"Loyalty Program by Smile.io": "-"},
+      {"Dropshipping by Modalyst": "250 Products"},
+      {"Branded eGift cards": "Advanced"},
+      {"Back in stock notifications": "Unlimited"},
+      {"Multiple Currencies": "Primary plus 5"}
+    ],
+    "bookings_platform": [
+      {"Unlimited services and classes": "Y"},
+      {"Multi-calendar syncs": "Y"},
+      {"Staff seats": "Y"},
+      {"Subscriptions": "Y"},
+      {"SMS notifications": "Y"},
+      {"Bookings on the go": "Y"},
+      {"Bookings analytics": "Y"}
+    ]
+  },
+  {
+    "title":"Business Elite",
+    "sub_title": "Scale your business",
+    "sub_title_tool_tip": "Unleash the full potential of your business with unlimited storage for digital assets, advanced marketing tools and advanced eCommerce capabilities.",
+    "price_monthly": "$159",
+    "price_yearly": "$1,908",
+    "price_sub_title" : "$1,908 billed yearly.",
+    "basic_attributes": ["15 collaborators", "Unlimited storage space","Advanced marketing suite","Free domain for 1 year","Standard site analytics","Accept payments","Advanced developer platform"],
+    "site_features": [
+      {"Custom domain": "Y"},
+      {"Free domain for 1 year": "Y"},
+      {"Remove Vista x Wix branding": "Y"},
+      {"Warning-proof": "Y"},
+      {"Storage space": "Unlimited"},
+      {"Video hours": "Unlimited"},
+      {"Customer accounts": "Y"},
+      {"Customized reports": "-"},
+      {"Events calendar appFree for 1": "-"},
+      {"Site booster appFree for 1 Year": "-"}
+    ],
+    "payment_tools": [
+      {"Accept payments": "-"},
+      {"Plans and recurring payments": "-"},
+      {"Sell on marketplaces": "-"},
+      {"Sell on social channels": "-"},
+      {"Automated Sales Tax": "500 Transactions /month"}
+    ],
+    "complete_ecommerce_platform": [
+      {"Up to 50,000 products": "-"},
+      {"Abandoned cart recovery": "-"},
+      {"Automatic discounts": "-"},
+      {"Accept pre-orders": "-"},
+      {"Accept manual orders": "-"},
+      {"Trusted Shops customer": "-"},
+      {"Advanced shipping": "-"},
+      {"Loyalty Program by Smile.io": "-"},
+      {"Dropshipping by Modalyst": "Unlimited"},
+      {"Branded eGift cards": "Advanced"},
+      {"Back in stock notifications": "Unlimited"},
+      {"Multiple Currencies": "Primary plus 10"}
+    ],
+    "bookings_platform": [
+      {"Unlimited services and classes": "Y"},
+      {"Multi-calendar syncs": "Y"},
+      {"Staff seats": "Y"},
+      {"Subscriptions": "Y"},
+      {"SMS notifications": "Y"},
+      {"Bookings on the go": "Y"},
+      {"Bookings analytics": "Y"}
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "account_id":"12345",
+    "current_plan": "Core",
+    "monthly_or_yearly": "Monthly",
+    "credit": "$10"
+  },
+  {
+    "account_id":"67890",
+    "current_plan": "Light",
+    "monthly_or_yearly": "Yearly",
+    "credit": "$5"
+  }
+]

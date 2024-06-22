@@ -1,0 +1,76 @@
+{
+  "header": {
+    "title": "Create a website you’re proud of",
+    "sub_title": "Discover the platform that gives you the freedom to make your own website - and develop your web presence exactly the way you want.",
+    "image_url": "https://cms.cloudinary.vpsvc.com/image/upload/w_3780/f_auto/q_auto/v1647441697/digital/partners/wix/PDP-A/Hero_Img_2_4x_72dpi.png",
+    "business_category" : [
+      {"default": "https://cms.cloudinary.vpsvc.com/image/upload/w_3780/f_auto/q_auto/v1647441697/digital/partners/wix/PDP-A/Hero_Img_2_4x_72dpi.png"},
+      {"agriculture_and_farming": "business_images/Agriculture and Farming.jpg"},
+      {"animal_and_pet_care": "business_images/Animal and Pet Care.jpg"},
+      {"arts_crafts_and_design": "business_images/Arts Crafts and Design.jpg"},
+      {"automotive_and_transportation": "business_images/Automotive and Transportation.jpg"},
+      {"construction_and_real_estate": "business_images/Construction and Real Estate.jpg"},
+      {"education_services": "business_images/Education Services.jpg"},
+      {"entertainment_and_recreation": "business_images/Entertainment and Recreation.jpg"},
+      {"finance_and_insurance": "business_images/Finance and Insurance.jpg"},
+      {"household_services": "business_images/Household Services.jpg"},
+      {"non_profits_charity_and_politics": "business_images/Non-Profits Charity and Politics.jpg"},
+      {"professional_services": "business_images/Professional Services.jpg"},
+      {"technology": "business_images/Technology.jpg"}
+    ]
+  },
+  "sections": [
+    {
+      "title": "The freedom to create the websites you want",
+      "sub_title": "You can build your own website, no design expertise or design team needed. Whether you’re promoting your small business, showcasing your work, opening your store or starting a blog – Wix’s free website builder makes it all possible."
+    },
+    {
+      "title": "Build your unique online presence",
+      "sub_title": "Customize your site\nStart with one of our customizable templates, or answer a few questions to get a free website designed just for you.\n\nAdd advanced features\nCreate your own blog, add an online store or accept bookings online. You can always add more features as you grow.\n\nOptimize for search engines\nAnswer questions about your website, location and keywords and get a personalized SEO plan to get found online.\n\nEdit your mobile view\nCheck out the mobile-optimized version of your website. Then switch to the Mobile Editor to create a unique mobile experience.",
+      "image_url": "https://cms.cloudinary.vpsvc.com/image/upload/w_3780/f_auto/q_auto/v1647443314/digital/partners/wix/PDP-A/Img_1_4x_72dpi.png"
+    },
+    {
+      "title": "Choose from 500+ professionally designed website templates",
+      "sub_title": "Each Wix business website template was created to meet unique small business needs. From automotive to the arts, photography to pets and everything in between, you’ll find customizable options designed with your industry in mind. Blog, Business, Online Store, Design, Photography and Education",
+      "image_url": "section_img.png"
+    },
+    {
+      "title": "Get online fast with Wix ADI",
+      "sub_title": "With the Wix Editor, you can build your own website exactly the way you want it. Start from scratch, or choose from 500+ designer-made templates that you can customize with drag and drop tools. Make your site come to life with video backgrounds, scroll effects, animation and more. Your one-of-a-kind business website is possible – and easier to create than you may think.",
+      "image_url": "https://cms.cloudinary.vpsvc.com/image/upload/w_3780/f_auto/q_auto/v1647443618/digital/partners/wix/PDP-A/bottle_1_4x_72dpi.png"
+    },
+    {
+      "title": "Manage, promote and grow your business online",
+      "sub_title": "Wix is a powerful yet user-friendly website builder for small business – with a built-in suite of professional features to help you develop and grow. After you design a website for your business, you can generate leads and drive conversions with email marketing, Facebook Ads, landing pages and customer management tools. Then use Wix Analytics to track your success and make data-driven decisions on how to improve.",
+      "image_url": "section_img_1.png"
+    },
+    {
+      "title": "Choose Wix, the website builder for small business",
+      "sub_title": "Today, 85% of customers search online before they make a purchase – which means it’s never been more important for your small business to have a website.\n\nThat’s why Vista has teamed up with Wix: To help small businesses design a website that gets noticed and remembered – for free. With 500+ customizable and eye-catching templates, free reliable web hosting, powerful SEO tools and 24/7 customer care, the Wix website builder is a complete online business solution.\n\nSell your products with build-in ecommerce features, take bookings for your services and make it easy for customers to pay you online. Use the integrated marketing and customer management tools to help drive sales and conversations. And do it all with a professional look that complements your offline business branding.\n\nOver 180 million people worldwide have chosen Wix to design a website for free. And with this new partnership between Vista and Wix, you can do it, too."
+    },
+    {
+      "title": "How to design a website for free",
+      "sub_title": "Follow these simple steps to build your own website today.\n\nSign up for a free website builder. Choose what kind of website you want to create.\nCustomize a template or get a website made for you. Choose your starting point.\nDrag and drop 100s of design features. Add text, galleries, videos, vector art and more.\nGet ready for business. Add an online store, booking system or small business blog.\nPublish your site and go live. Start building your business's online presence.\nDrive traffic to your website. Use advanced SEO tools and integrated marketing solutions.\n"
+    },
+    {
+      "title": "Make your own website with built-in tools to grow your small business online",
+      "sub_title": [
+        "Online Store\nStart selling online and grow your business with a powerful eCommerce platform.",
+        "Online scheduling software\nLet clients book appointments, schedule services and pay online, all on your business website.",
+        "Professional blog\nCreate a blog with built-in features to grow your reach and build a community.",
+        "Logo maker\nDesign a one-of-a-kind professional logo to help build your business brand online.",
+        "Custom domains\nGet a professional domain name that matches your small business and brand.",
+        "SEO tools\nImprove your visibility on Google and other search engines with a full range of SEO features."
+      ],
+      "image_url": [
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647445649/digital/partners/wix/PDP-A/cup_checkout_4x_72dpi.png",
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647443753/digital/partners/wix/PDP-A/calendar_4x_72dpi.png",
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647443867/digital/partners/wix/PDP-A/glasses_4x_72dpi.png",
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647443954/digital/partners/wix/PDP-A/bottle_4_4x_72dpi.png",
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647444041/digital/partners/wix/PDP-A/Homepage_4x_72dpi.png",
+        "https://cms.cloudinary.vpsvc.com/image/upload/f_auto/q_auto/v1647444136/digital/partners/wix/PDP-A/road_trip_4x_72dpi.png"
+      ]
+    }
+  ],
+  "terms_condition": "By clicking “Get started for free” and signing up for a Vista x Wix account, you have read and agree to the Wix Terms of Use and acknowledge the Wix Privacy Policy. Vista and Wix will share your information with each other and also in accordance with their privacy policies."
+}

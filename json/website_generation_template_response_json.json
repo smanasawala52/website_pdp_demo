@@ -1,0 +1,6 @@
+{
+  "title": "title_1",
+  "sub_title": ["sub_title_1","sub_title_1"],
+  "image_url": ["section_image_url_1","section_image_url_2"],
+  "business_category": {"selected_business_category_1": "selected_business_category_image_url_1"}
+}
