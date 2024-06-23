@@ -8,7 +8,7 @@ from st_clickable_images import clickable_images
 
 from common import classify_query, generate_website_single_prompts, website_data, \
     website_generation_template_response_json, get_plan_info, parse_plan_info, plans_details, collect_unique_attributes, \
-    pdp_faq, plan_faq, get_current_plan, get_plan_difference
+    pdp_faq, plan_faq, get_current_plan, get_plan_difference, get_prompt_images
 import random
 
 st.set_page_config(
@@ -46,6 +46,7 @@ prompts = [
     {"text": "Compare Plans Core, Light and Business"},
     {"text": "for account 12345 give plan details"},
     {"text": "for account 12345 compare plan with business"},
+    {"text": "Get started with Wix for free"},
     {"text": "Create website"},
     {"text": "Show All Plans"},
     {"text": "Website FAQ"},
@@ -175,6 +176,16 @@ def create_grid(places, columns=6, show_checkbox=True):
     return selected_places
 
 
+hide_img_fs = '''
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+'''
+
+st.markdown(hide_img_fs, unsafe_allow_html=True)
+
+
 # Function to create a grid layout
 def create_grid_image(images, columns=6, show_checkbox=True):
     rows = len(images) // columns + int(len(images) % columns > 0)
@@ -193,9 +204,10 @@ def random_color():
 
 def generate_home_page():
     search_query = st.text_input("Website PDP Assistant:")
-    search_query_btn = create_grid(prompts)
-    if search_query_btn is not None and len(search_query_btn) > 0:
-        search_query = search_query_btn[0]
+    # create_grid_image(get_prompt_images())
+    # search_query_btn = create_grid(prompts)
+    # if search_query_btn is not None and len(search_query_btn) > 0:
+    # search_query = search_query_btn[0]
     execute_search(search_query)
 
 
@@ -332,7 +344,7 @@ def execute_search(search_query):
             for faq in pdp_faq:
                 with st.expander(faq['q']):
                     st.write(faq['a'])
-        if category == 'plan_faq':
+        if category == 'plan_faq' or category == 'plans_faq':
             for faq in plan_faq:
                 with st.expander(faq['q']):
                     st.write(faq['a'])

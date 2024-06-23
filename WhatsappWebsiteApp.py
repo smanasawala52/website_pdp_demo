@@ -133,12 +133,62 @@ test_result_json_6 = {
 }
 
 
-def display_compare_plan(plans):
+def format_features(features):
+    message = ""
+    plan_titles = [key for key in features[0].keys() if key != 'label']
+    for feature in features:
+        message += f"\n\n{feature['label']}:"
+        for plan_title in plan_titles:
+            message += f"\n  {plan_title}: {feature[plan_title]}"
+    return message
+
+
+def format_features_2(features):
+    message = ""
+    plan_titles = [key for key in features[0].keys() if key != 'label']
+
+    for plan in plan_titles:
+        message += f"\nPlan: {plan}\n"
+        for feature in features:
+            message += f"  {feature['label']}: {feature[plan]}"
+        message += "\n"
+
+    return message
+
+
+def display_compare_plan(plans, account_details=None):
     differences = get_plan_difference(plans)
+    print(differences)
+    message = format_features(differences)
+    print(message)
+    if account_details is not None:
+        account_current_plan = account_details["current_plan"]
+        account_current_plan_credit = account_details["credit"]
+        account_det_str = f"*{account_current_plan}*\n\n*Credit: {account_current_plan_credit}*\n"
+        message = account_det_str + message
+    return message
 
 
-def display_plan_details_full(plans):
-    parsed_plans = [parse_plan_info(plan) for plan in plans]
+def format_plan(plan):
+    attributes = "\n\t\t- ".join(plan['basic_attributes'])
+    return f"""
+        *{plan['title']}*
+        {plan['sub_title']}
+        Price: {plan['price_monthly']} per month, or {plan['price_yearly']} yearly ({plan['price_sub_title']})
+        Features:
+        \t- {attributes}
+        """
+
+
+def display_plan_details_full(plans, account_details=None):
+    message = "".join([format_plan(plan) for plan in plans])
+    print(message)
+    if account_details is not None:
+        account_current_plan = account_details["current_plan"]
+        account_current_plan_credit = account_details["credit"]
+        account_det_str = f"*{account_current_plan}*\n\n*Credit: {account_current_plan_credit}*\n"
+        message = account_det_str + message
+    return message
 
 
 def execute_search(search_query):
@@ -187,22 +237,23 @@ def execute_search(search_query):
                         if compare_plans is not None and account_current_plan is not None:
                             compare_plans.append(account_current_plan)
                             plans = get_plan_info(compare_plans)
-                            display_compare_plan(plans)
+                            return display_compare_plan(plans, account_details)
                         else:
                             plans = get_plan_info(compare_plans)
-                            display_compare_plan(plans)
+                            return display_compare_plan(plans, account_details)
                     else:
                         plans = get_plan_info(compare_plans)
-                        display_compare_plan(plans)
+                        return display_compare_plan(plans)
                 else:
                     plans = get_plan_info(compare_plans)
-                    display_compare_plan(plans)
+                    return display_compare_plan(plans)
             if category == 'plan_info':
                 compare_plans = classify_category.get('compare_plans', None)
                 if account_id is not None:
                     account_details = get_current_plan(account_id)
                     if account_details is not None:
                         account_current_plan = account_details["current_plan"]
+                        print(account_current_plan)
                         account_current_plan_credit = account_details["credit"]
                         # st.header(f"Current Plan: {account_current_plan}")
                         # st.header(f"Credit Available: {account_current_plan_credit}")
@@ -210,16 +261,16 @@ def execute_search(search_query):
                         if compare_plans is not None and account_current_plan is not None:
                             compare_plans.append(account_current_plan)
                             plans = get_plan_info(compare_plans)
-                            display_compare_plan(plans)
+                            return display_compare_plan(plans, account_details)
                         else:
                             plans = get_plan_info([account_current_plan])
-                            display_plan_details_full(plans)
+                            return display_plan_details_full(plans, account_details)
                     else:
                         plans = get_plan_info(classify_category.get('plan_id', None))
-                        display_plan_details_full(plans)
+                        return display_plan_details_full(plans)
                 else:
                     plans = get_plan_info(classify_category.get('plan_id', None))
-                    display_plan_details_full(plans)
+                    return display_plan_details_full(plans)
         if category == 'current_plan':
             if account_id is not None:
                 # get current Plan information
@@ -230,57 +281,33 @@ def execute_search(search_query):
                 # st.header(f"Current Plan: {account_current_plan}")
                 # st.header(f"Credit Available: {account_current_plan_credit}")
                 plans = get_plan_info([account_current_plan])
-                display_plan_details_full(plans)
+                return display_plan_details_full(plans, account_details)
         if category == 'website_faq':
             str_website_faq = ''
             for faq in pdp_faq:
-                str_website_faq += f"**{faq['q']}**: {faq['a']}\n"
+                str_website_faq += f"*{faq['q']}*: \n{faq['a']}\n\n"
+            return str_website_faq
         if category == 'plan_faq':
             str_plan_faq = ''
             for faq in plan_faq:
-                str_plan_faq += f"**{faq['q']}**: {faq['a']}\n"
-
-
-def display_plan_details(plan_info, showLables=False):
-    table_data = []
-    for feature_category, features in [
-        ("Site Features", plan_info["site_features"]),
-    ]:
-        if showLables:
-            row = [f"**{feature_category}**"]
-        else:
-            row = ['']
-        table_data.append(row)
-        for item in enumerate(features):
-            item_temp = list(item)[1]
-            for key, value in item_temp.items():
-                if showLables:
-                    row = [key]
-                else:
-                    row = [value]
-                table_data.append(row)
-    # st.table(table_data)
-
-
-# Define sets of colors and fonts
-background_colors = ['#FF6347', '#4682B4', '#7FFF00', '#FFD700', '#8A2BE2']
-fonts = ['Arial', 'Helvetica', 'Times New Roman', 'Courier New', 'Verdana']
+                str_plan_faq += f"*{faq['q']}*: \n{faq['a']}\n\n"
+            return str_plan_faq
 
 
 def create_website_info_section(result_json):
     print(result_json)
     str = ''
     if result_json is not None:
-        str += f"**{result_json['title']}**"
-        str += f"{result_json['sub_title'][0]}"
+        str += f"*{result_json['title']}*"
+        str += f"\n{result_json['sub_title'][0]}"
         if result_json['business_category'] is not None and len(result_json['business_category']) > 0:
             image_data = result_json['business_category']
             first_key = next(iter(image_data))
             image_path = image_data[first_key]
-            str += f"{image_path}"
+            str += f"\n\n{image_path}"
         elif result_json['image_url'] is not None and len(result_json['image_url']) > 0:
             result_json['image_url'][0]
-            str += f"{result_json['image_url'][0]}"
+            str += f"\n\n{result_json['image_url'][0]}"
     return str
 
 
@@ -302,5 +329,17 @@ def whatsapp_reply():
     return str(response)
 
 
+@app.route("/whatsapp", methods=['GET'])
+def whatsapp_reply_get():
+    incoming_msg = 'for account 12345 compare plan with business'
+    try:
+        reply = execute_search(incoming_msg)
+    except Exception as e:
+        reply = str(e)
+
+    print(reply)
+    return str(reply[:1000])
+
+
 if __name__ == "__main__":
-    app.run(port=5000, host='localhost', debug=True)
+    app.run(port=8081, host='127.0.0.1', debug=True)

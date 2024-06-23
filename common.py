@@ -7,11 +7,24 @@ from dotenv import load_dotenv
 from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from os import listdir
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-4o", temperature=0.7)
 openai.api_key = OPENAI_API_KEY
+
+
+def get_prompt_images():
+    folder_dir = "images/static"
+    images = []
+    for image in os.listdir(folder_dir):
+        # check if the image ends with png
+        if (image.endswith(".jpg")):
+            print(image)
+            images.append(f"images/static/{image}")
+    images.sort()
+    return images
 
 
 def load_data(filename):
@@ -72,6 +85,7 @@ def classify_query(query):
     )
     category = response.choices[0].message.content.strip().replace('\'', '\"')
     category = json.loads(category)
+    print(category)
     return category
 
 
@@ -112,7 +126,8 @@ def generate_website_single_prompts():
     You are an expert website customer server. Given the above sections details, it is your job to fetch the section,\
     based on '{user_query}' and business_category: {business_category}. \
     Most importantly, make use of title and sub_title attribute to make sure section is fetched correctly. \
-    Make sure to format your response like JSON below and use it as a guide. \
+    Make sure to format your response like JSON below and use it as a guide.
+     Also, understand user language and reply back that format only.\
     {response_json}
     """
     website_generation_prompt = PromptTemplate(
@@ -125,7 +140,7 @@ def generate_website_single_prompts():
 
 def get_plan_info(plan_titles=None):
     matched_plans = []
-    if plan_titles is not None and len(plan_titles)>0:
+    if plan_titles is not None and len(plan_titles) > 0:
         for plan_title in plan_titles:
             for plan_temp in plans_details:
                 if plan_temp["title"].lower() == plan_title.lower():
@@ -178,7 +193,9 @@ def get_plan_difference(plans):
         plans = plans_details
     if plans is []:
         plans = plans_details
-        # Initialize dictionaries to store the differences
+
+    print(plans)
+    # Initialize dictionaries to store the differences
     site_features_diff = {"label": []}
 
     # Iterate through each plan and compare attributes
@@ -207,6 +224,7 @@ def get_plan_difference(plans):
     # Extracting differing values
     differences = []
     data = site_features_diff
+    print(data)
     plans_title = [plan for plan in data if plan != "label"]
     for i in range(len(data[plans_title[0]])):
         plan_values = [data[plan][i] for plan in plans_title]
@@ -215,4 +233,4 @@ def get_plan_difference(plans):
             for plan, value in zip(plans_title, plan_values):
                 difference[plan] = value
             differences.append(difference)
-
+    return differences

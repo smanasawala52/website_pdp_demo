@@ -16,6 +16,7 @@ twilio
 flask
 st-clickable-images
 python-Levenshtein
+streamlit-mic-recorder
 
 
 -e .
