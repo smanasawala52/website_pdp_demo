@@ -299,7 +299,10 @@ def create_website_info_section(result_json):
     str = ''
     if result_json is not None:
         str += f"*{result_json['title']}*"
-        str += f"\n{result_json['sub_title'][0]}"
+        if isinstance(result_json['sub_title'], str):
+            str += f"\n{result_json['sub_title']}"
+        else:
+            str += f"\n{result_json['sub_title'][0]}"
         if result_json['business_category'] is not None and len(result_json['business_category']) > 0:
             image_data = result_json['business_category']
             first_key = next(iter(image_data))

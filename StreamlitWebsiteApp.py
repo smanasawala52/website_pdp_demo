@@ -392,6 +392,23 @@ background_colors = ['#FF6347', '#4682B4', '#7FFF00', '#FFD700', '#8A2BE2']
 fonts = ['Arial', 'Helvetica', 'Times New Roman', 'Courier New', 'Verdana']
 
 
+def print_title_subheader(result_json=None):
+    st.subheader(result_json['title'])
+    if isinstance(result_json['sub_title'], str):
+        st.write(result_json['sub_title'])
+    else:
+        if result_json['sub_title'] is not None and len(result_json['sub_title']) > 1:
+            st.write(result_json['sub_title'][0])
+        elif result_json['sub_title'] is not None and len(result_json['sub_title']) > 0:
+            st.write(result_json['sub_title'][0])
+    cols_button = st.columns(2)
+    with cols_button[0]:
+        st.button("Get Started")
+    with cols_button[1]:
+        st.button("See All Premium Plans")
+    st.caption(website_data["terms_condition"])
+
+
 def create_website_info_section(result_json):
     # Randomly choose background color and font
     chosen_color = random.choice(background_colors)
@@ -417,18 +434,7 @@ def create_website_info_section(result_json):
         if result_json['business_category'] is not None and len(result_json['business_category']) > 0:
             cols1 = st.columns(2)
             with cols1[0]:
-                st.subheader(result_json['title'])
-                if result_json['sub_title'] is not None and len(result_json['sub_title']) > 1:
-                    st.write(result_json['sub_title'][0])
-                elif result_json['sub_title'] is not None and len(result_json['sub_title']) > 0:
-                    st.write(result_json['sub_title'][0])
-
-                cols_button = st.columns(2)
-                with cols_button[0]:
-                    st.button("Get Started")
-                with cols_button[1]:
-                    st.button("See All Premium Plans")
-                st.caption(website_data["terms_condition"])
+                print_title_subheader(result_json)
             with cols1[1]:
                 image_data = result_json['business_category']
                 first_key = next(iter(image_data))
@@ -437,35 +443,15 @@ def create_website_info_section(result_json):
         elif result_json['image_url'] is not None and len(result_json['image_url']) > 0:
             cols2 = st.columns(2)
             with cols2[0]:
-                st.subheader(result_json['title'])
-                if result_json['sub_title'] is not None and len(result_json['sub_title']) > 1:
-                    st.write(result_json['sub_title'][0])
-                elif result_json['sub_title'] is not None and len(result_json['sub_title']) > 0:
-                    st.write(result_json['sub_title'][0])
-
-                cols_button = st.columns(2)
-                with cols_button[0]:
-                    st.button("Get Started")
-                with cols_button[1]:
-                    st.button("See All Premium Plans")
-                st.caption(website_data["terms_condition"])
+                print_title_subheader(result_json)
             with cols2[1]:
                 if len(result_json['image_url']) > 1:
                     create_grid_image(result_json['image_url'], columns=3)
                 else:
                     st.image(result_json['image_url'][0])
         else:
-            st.subheader(result_json['title'])
-            if result_json['sub_title'] is not None and len(result_json['sub_title']) > 1:
-                st.write(result_json['sub_title'][0])
-            elif result_json['sub_title'] is not None and len(result_json['sub_title']) > 0:
-                st.write(result_json['sub_title'][0])
-            cols_button = st.columns(2)
-            with cols_button[0]:
-                st.button("Get Started")
-            with cols_button[1]:
-                st.button("See All Premium Plans")
-            st.caption(website_data["terms_condition"])
+            print_title_subheader(result_json)
+
 
 
 generate_home_page()
