@@ -296,22 +296,22 @@ def execute_search(search_query):
 
 def create_website_info_section(result_json):
     print(result_json)
-    str = ''
+    str_1 = ''
     if result_json is not None:
-        str += f"*{result_json['title']}*"
+        str_1 += f"*{result_json['title']}*"
         if isinstance(result_json['sub_title'], str):
-            str += f"\n{result_json['sub_title']}"
+            str_1 += f"\n{result_json['sub_title']}"
         else:
-            str += f"\n{result_json['sub_title'][0]}"
+            str_1 += f"\n{result_json['sub_title'][0]}"
         if result_json['business_category'] is not None and len(result_json['business_category']) > 0:
             image_data = result_json['business_category']
             first_key = next(iter(image_data))
             image_path = image_data[first_key]
-            str += f"\n\n{image_path}"
+            str_1 += f"\n\n{image_path}"
         elif result_json['image_url'] is not None and len(result_json['image_url']) > 0:
             result_json['image_url'][0]
-            str += f"\n\n{result_json['image_url'][0]}"
-    return str
+            str_1 += f"\n\n{result_json['image_url'][0]}"
+    return str_1
 
 
 @app.route("/whatsapp", methods=['POST'])
@@ -334,7 +334,7 @@ def whatsapp_reply():
 
 @app.route("/whatsapp", methods=['GET'])
 def whatsapp_reply_get():
-    incoming_msg = 'for account 12345 compare plan with business'
+    incoming_msg = 'create website'
     try:
         reply = execute_search(incoming_msg)
     except Exception as e:
