@@ -22,35 +22,27 @@ st.set_page_config(
 if 'is_visible' not in st.session_state:
     st.session_state.is_visible = False  # Set initial visibility to True
 
-st.markdown(
-    """
-<style>
-stButton, .button {
-    width: 200px;
-    height: 200px;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
-
 prompts = [
-    {"text": "Create website for small real estate business"},
-    {"text": "Show me templates for small businesses"},
-    {"text": "How to add an online store to my website"},
+    {"text": "Create website"},
+    {"text": "See all Plans"},
+]
+prompts_website_info = [
+    {"text": "Create website for real estate business"},
     {"text": "Customize a website for my photography business"},
     {"text": "Create a professional logo with Wix"},
+    {"text": "Website faq"},
+]
+prompts_plans_info = [
+    {"text": "Get started with Wix for free"},
     {"text": "Show All Plans Core, Light and Business"},
     {"text": "Compare Plans Core, Light and Business"},
-    {"text": "for account 12345 give plan details"},
+    {"text": "for account 12345 give plan detail"},
+    {"text": "Plans faq"},
+]
+prompts_user_info = [
+    {"text": "for account 12345 give plan detail"},
+    {"text": "for account 67890 give plan detail"},
     {"text": "for account 12345 compare plan with business"},
-    {"text": "Get started with Wix for free"},
-    {"text": "Create website"},
-    {"text": "Show All Plans"},
-    {"text": "Website FAQ"},
-    {"text": "Plans FAQ"},
 ]
 test_result_json_1 = {
     "title": "Choose Wix, the website builder for small business",
@@ -175,6 +167,9 @@ def create_grid(places, columns=6, show_checkbox=True):
                     selected_places.append(place["text"])
     return selected_places
 
+def create_suggested_prompts(places):
+    fplaces = ", ".join([place['text'] for place in places])
+    st.write(f'Suggested Prompts: {fplaces}')
 
 hide_img_fs = '''
 <style>
@@ -205,9 +200,10 @@ def random_color():
 def generate_home_page():
     search_query = st.text_input("Website PDP Assistant:")
     # create_grid_image(get_prompt_images())
-    # search_query_btn = create_grid(prompts)
-    # if search_query_btn is not None and len(search_query_btn) > 0:
-    # search_query = search_query_btn[0]
+    #search_query_btn = create_grid(prompts)
+    #if search_query_btn is not None and len(search_query_btn) > 0:
+    #    search_query = search_query_btn[0]
+    create_suggested_prompts(prompts)
     execute_search(search_query)
 
 
@@ -258,6 +254,8 @@ def execute_search(search_query):
             business_category = classify_category.get('business_id', 'default')
             account_id = classify_category.get('account_id', None)
             if category == 'website_info' and user_query is not None:
+                create_suggested_prompts(prompts_website_info)
+
                 with st.spinner('loading.....'):
                     try:
                         with get_openai_callback() as cb:
@@ -286,6 +284,7 @@ def execute_search(search_query):
             if category == 'compare_plans':
                 compare_plans = classify_category.get('compare_plans', None)
                 if account_id is not None:
+                    create_suggested_prompts(prompts_user_info)
                     account_details = get_current_plan(account_id)
                     if account_details is not None:
                         account_current_plan = account_details["current_plan"]
@@ -304,11 +303,13 @@ def execute_search(search_query):
                         plans = get_plan_info(compare_plans)
                         display_compare_plan(plans)
                 else:
+                    create_suggested_prompts(prompts_plans_info)
                     plans = get_plan_info(compare_plans)
                     display_compare_plan(plans)
             if category == 'plan_info':
                 compare_plans = classify_category.get('compare_plans', None)
                 if account_id is not None:
+                    create_suggested_prompts(prompts_user_info)
                     account_details = get_current_plan(account_id)
                     if account_details is not None:
                         account_current_plan = account_details["current_plan"]
@@ -327,10 +328,12 @@ def execute_search(search_query):
                         plans = get_plan_info(classify_category.get('plan_id', None))
                         display_plan_details_full(plans)
                 else:
+                    create_suggested_prompts(prompts_plans_info)
                     plans = get_plan_info(classify_category.get('plan_id', None))
                     display_plan_details_full(plans)
         if category == 'current_plan':
             if account_id is not None:
+                create_suggested_prompts(prompts_user_info)
                 # get current Plan information
                 # 1) get account information from account details
                 account_details = get_current_plan(account_id)
@@ -341,10 +344,12 @@ def execute_search(search_query):
                 plans = get_plan_info([account_current_plan])
                 display_plan_details_full(plans)
         if category == 'website_faq':
+            create_suggested_prompts(prompts_website_info)
             for faq in pdp_faq:
                 with st.expander(faq['q']):
                     st.write(faq['a'])
         if category == 'plan_faq' or category == 'plans_faq':
+            create_suggested_prompts(prompts_plans_info)
             for faq in plan_faq:
                 with st.expander(faq['q']):
                     st.write(faq['a'])
@@ -413,23 +418,6 @@ def create_website_info_section(result_json):
     # Randomly choose background color and font
     chosen_color = random.choice(background_colors)
     chosen_font = random.choice(fonts)
-    st.markdown("""
-        <style>
-            .stDivider {margin-top: 0px; margin-bottom: 0px;}
-            .stTabs [data-baseweb="tab-list"] button {padding: 0px 0px;}
-            .stTabs [data-baseweb="tab"] {margin-right: 0px;}
-            .stHeader {margin-bottom: 0px;}
-            .stSubheader {margin-bottom: 0px;}
-            .stMarkdown {margin-bottom: 0px;}
-            h3 {padding-bottom: 0px; padding-top: 0px;}
-            p {padding-bottom: 0px; padding-top: 0px; margin-bottom: 0px}
-            body {{
-                background-color: {chosen_color};
-                font-family: '{chosen_font}', sans-serif;
-            }}
-        </style>
-    """, unsafe_allow_html=True)
-    print(result_json)
     if result_json is not None:
         if result_json['business_category'] is not None and len(result_json['business_category']) > 0:
             cols1 = st.columns(2)
