@@ -1,0 +1,9 @@
+{
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2018,
+  "body_type": "Sedan",
+  "color": "White",
+  "mileage": 45000,
+  "confidence": {"make": 0.95, "model": 0.92}
+}
